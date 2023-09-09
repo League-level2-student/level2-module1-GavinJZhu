@@ -21,20 +21,20 @@ public class VisualArrayLists implements ActionListener {
 		list.add("Find a Job");
 		list.add("Something I don't know");
 		// 2. Set one item in our list to be something different
-		list.set(4, "Annoy my brother");
+		list.set(3, "Annoy my brother");
 		// 3. Remove something from our list
 		list.remove(2);
 		// 4. Print the size of our list
-		System.out.println(list.size());
+		System.out.println("list size:  " + list.size());
 		// 5. Check if our list contains a specific thing of your choice
 		//	  and print whether it is in the list or not.
-		list.contains()
+		list.contains("Backpack europe");
 		// 6. Get a specific item from our list and print it out
-		System.out.println(list.get(2));
+		System.out.println("getting specific index in list:  " + list.get(2));
 		// 7. Clear our list of all items
 		list.clear();
 		// 8. Print the size of our list again
-		System.out.println(list.size());
+		System.out.println("list size:  " + list.size());
 	}
 	
 	
