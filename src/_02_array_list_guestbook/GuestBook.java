@@ -1,8 +1,12 @@
 package _02_array_list_guestbook;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-public class GuestBook {
+public class GuestBook implements ActionListener {
 	// Create a GUI with two buttons. One button reads "Add Name" and the other button reads "View Names". 
 	// When the add name button is clicked, display an input dialog that asks the user to enter a name. Add
 	// that name to an ArrayList. When the "View Names" button is clicked, display a message dialog that displays
@@ -12,8 +16,10 @@ public class GuestBook {
 	// Guest #3: Greg Ganders
 	// Guest #4: Donny Doners
     Frame uiFrame;
-
-
+    Button button1;
+    Button button2;
+    Panel panel;
+    ArrayList<String> names = new ArrayList();
     public static void main(String[] args) {
       new GuestBook().run();
     }
@@ -23,19 +29,42 @@ public class GuestBook {
         //create a panel, add to frame
         //create 2 buttons, add both to panel
         //display the frame
-
+        uiFrame.setVisible(true);
+       createPanel();
+       createButtons();
+       uiFrame.pack();
+       button1.addActionListener(this);
+       button2.addActionListener(this);
+       names.add("Guest #1: Bob Banders");
+       names.add("Guest #2: Sandy Summers");
+       names.add("Guest #3: Greg Ganders");
+       names.add("Guest #4: Donny Doners");
     }
     public void createFrame(){
         uiFrame = new Frame();
     }
     public void createPanel(){
-        Panel panel = new Panel();
+         panel = new Panel();
         uiFrame.add(panel);
     }
     public void createButtons(){
-
+        button1 = new Button();
+        button2 = new Button();
+        panel.add(button1);
+        panel.add(button2);
+        button1.setLabel("Add name");
+        button2.setLabel("View names");
     }
-    public void displayFrame(){
 
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource().equals(button1)){
+            String nameAdd = JOptionPane.showInputDialog(null,"Add a name to the guest book!");
+            names.add("Guest #" + names.size()+1 + ": " + nameAdd);
+        }
+        if (e.getSource().equals(button2)){
+            JOptionPane.showMessageDialog();
+        }
     }
 }
