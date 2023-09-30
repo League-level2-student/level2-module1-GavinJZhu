@@ -61,10 +61,22 @@ public class GuestBook implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(button1)){
             String nameAdd = JOptionPane.showInputDialog(null,"Add a name to the guest book!");
-            names.add("Guest #" + names.size()+1 + ": " + nameAdd);
+            int size = names.size()+1;
+            names.add("Guest #" + size + ": " + nameAdd);
         }
-        if (e.getSource().equals(button2)){
-            JOptionPane.showMessageDialog();
+        else if (e.getSource().equals(button2)) {
+            for(int i=0; i<1; i++){
+            // Create String.  lineOfNames
+                String lineOfNames;
+            // Create for loop, iterate/loop all items in names
+
+                lineOfNames = lineOfName + names(nth) + "\n";
+
+            // JOptionPane......(....., lineofNames)
+
+        }
+            JOptionPane.showMessageDialog(null, names);
+
         }
     }
 }
